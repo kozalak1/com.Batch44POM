@@ -1,6 +1,9 @@
 package tests.day_17;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.HotelMyCamp;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C02_PropertiesFirstClass {
@@ -13,6 +16,15 @@ public class C02_PropertiesFirstClass {
         //test data password : Manager1!
         //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
 
-        Driver.getDriver().get("");
+        Driver.getDriver().get(ConfigReader.getProperty("HotelMyCampUrl"));
+        HotelMyCamp hotelMyCamp = new HotelMyCamp();
+        hotelMyCamp.ilkLoginLinki.click();
+
+        hotelMyCamp.usernameBox.sendKeys("HotelMyCampValidUsername");
+        hotelMyCamp.passwordBox.sendKeys("HotelMyCampValidPassword");
+        hotelMyCamp.loginButonu.click();
+
+        Assert.assertTrue(hotelMyCamp.girisYapilamadiYaziElementi.isDisplayed());
+
     }
 }

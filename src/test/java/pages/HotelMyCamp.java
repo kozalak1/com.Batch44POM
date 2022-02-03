@@ -27,5 +27,12 @@ public class HotelMyCamp {
     @FindBy(xpath = "//div[@class='validation-summary-errors']")
     public WebElement girisYapilamadiYaziElementi;
 
+    public void bekle (int saniye){
+        try {
+            Thread.sleep(saniye*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
