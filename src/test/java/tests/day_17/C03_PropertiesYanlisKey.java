@@ -1,9 +1,8 @@
 package tests.day_17;
 
 import org.testng.annotations.Test;
-import utilities.Driver;
 
-public class C03_YanlisKey {
+public class C03_PropertiesYanlisKey {
 
     @Test
      public  void negativeLoginTest01 (){

@@ -20,11 +20,12 @@ public class C02_PropertiesFirstClass {
         HotelMyCamp hotelMyCamp = new HotelMyCamp();
         hotelMyCamp.ilkLoginLinki.click();
 
-        hotelMyCamp.usernameBox.sendKeys("HotelMyCampValidUsername");
-        hotelMyCamp.passwordBox.sendKeys("HotelMyCampValidPassword");
+        hotelMyCamp.usernameBox.sendKeys(ConfigReader.getProperty("HotelMyCampValidUsername"));
+        hotelMyCamp.passwordBox.sendKeys(ConfigReader.getProperty("HotelMyCampValidPassword"));
+        hotelMyCamp.bekle(3);
         hotelMyCamp.loginButonu.click();
 
-        Assert.assertTrue(hotelMyCamp.girisYapilamadiYaziElementi.isDisplayed());
+        Assert.assertTrue(hotelMyCamp.basariliGirisYaziElementi.isDisplayed());
 
     }
 }
