@@ -8,12 +8,21 @@ public class C02_DriverFirstTest {
 
     @Test
     public void driverAmazonTest (){
+        // Driver class'i sayesinde bizim eski driver artık öldü
+        // artik driver'a ihtiyac varsa Driver.getDriver() yazacagiz
+
         Driver.getDriver().get("https://www.amazon.com");
         String actualTitle = Driver.getDriver().getTitle();
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualTitle.contains("Amazon"));
 
     }
+
+    // Driver.getDriver method'u her calistiginda
+    // driver= new ChromeDriver(); komutundan oturu yeni bir driver olusturuyor
+    // Biz Driver class'dan getDriver'i ilk calistirdigimizda new atamasi olsun
+    // sonraki calistirmalarda atama olmasin istiyoruz
+    // bunun icin driver= new ChromeDriver(); satiri bir if blogu icine alacagiz
 
     @Test
     public void driverBestbuyTest(){

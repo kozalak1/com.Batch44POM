@@ -10,7 +10,7 @@ public class NegativeLoginTest {
     HotelMyCamp hotelMyCamp = new HotelMyCamp();
 
     @Test
-    public void yanlisSifreTesti () {
+    public void yanlisSifreTesti() {
         //1) smokeTest  paketi altinda yeni bir Class olustur: NegativeTest
         //3 Farkli test Methodunda 3 senaryoyu test et
         //                - yanlisSifre
@@ -24,10 +24,34 @@ public class NegativeLoginTest {
         Driver.getDriver().get(ConfigReader.getProperty("HotelMyCampUrl"));
         hotelMyCamp.ilkLoginLinki.click();
         hotelMyCamp.usernameBox.sendKeys(ConfigReader.getProperty("HotelMyCampWrongUsername"));
-        hotelMyCamp.passwordBox.sendKeys(ConfigReader.getProperty("HotelMyCampValidPassword"));
+        hotelMyCamp.passwordBox.sendKeys(ConfigReader.getProperty("HotelMyCampWrongPassword"));
         hotelMyCamp.loginButonu.click();
         Assert.assertTrue(hotelMyCamp.girisYapilamadiYaziElementi.isDisplayed());
         Driver.closeDriver();
 
+    }
+
+    @Test
+    public void yanlisUsernameTesti() {
+        Driver.getDriver().get(ConfigReader.getProperty("HotelMyCampUrl"));
+        hotelMyCamp = new HotelMyCamp();
+        hotelMyCamp.ilkLoginLinki.click();
+        hotelMyCamp.usernameBox.sendKeys(ConfigReader.getProperty("HotelMyCampWrongUsername"));
+        hotelMyCamp.passwordBox.sendKeys(ConfigReader.getProperty("HotelMyCampWrongPassword"));
+        hotelMyCamp.loginButonu.click();
+        Assert.assertTrue(hotelMyCamp.girisYapilamadiYaziElementi.isDisplayed());
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void yanlisSifreUsernameTesti() {
+        Driver.getDriver().get(ConfigReader.getProperty("HotelMyCampUrl"));
+        hotelMyCamp = new HotelMyCamp();
+        hotelMyCamp.ilkLoginLinki.click();
+        hotelMyCamp.usernameBox.sendKeys(ConfigReader.getProperty("HotelMyCampWrongUsername"));
+        hotelMyCamp.passwordBox.sendKeys(ConfigReader.getProperty("HotelMyCampWrongPassword"));
+        hotelMyCamp.loginButonu.click();
+        Assert.assertTrue(hotelMyCamp.girisYapilamadiYaziElementi.isDisplayed());
+        Driver.closeDriver();
     }
 }

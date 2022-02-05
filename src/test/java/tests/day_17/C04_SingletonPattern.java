@@ -6,11 +6,25 @@ public class C04_SingletonPattern {
 
     public void test05 () {
 
-        // Driver driver1 = new Driver();
+        // singleton pattern : bir class'dan birden fazla obje uretilmesine
+        // izin vermeyen bir pattern olarak kabul gormustur
 
-        // Driver driver2 = new Driver();
+        // biz Driver class'ini driver uretmek uzere kullaniyoruz
+        // ancak Driver class'inda driver isminde bir instance variable da var
+        // ve biz obje ureterek bu instance driver'a ulasabiliriz
 
-        // Driver driver3 = new Driver();
+        //Driver driver1=new Driver();
+
+        //Driver driver2=new Driver();
+
+        //Driver driver3=new Driver();
+
+
+        // Singleton pattern kabul gormus bir pattern'dir
+        // amac bir class'dan obje uretilmemesini saglamaktir
+        // bunun icin singleton patter'de koruyacagim,iz class'da
+        // parametresiz bir constructor olusturur ve
+        // bu constructor'i private yapariz
 
     }
 }

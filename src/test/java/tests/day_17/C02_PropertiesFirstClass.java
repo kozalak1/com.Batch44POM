@@ -24,7 +24,7 @@ public class C02_PropertiesFirstClass {
         hotelMyCamp.passwordBox.sendKeys(ConfigReader.getProperty("HotelMyCampValidPassword"));
         hotelMyCamp.bekle(3);
         hotelMyCamp.loginButonu.click();
-
+        //	Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
         Assert.assertTrue(hotelMyCamp.basariliGirisYaziElementi.isDisplayed());
 
     }

@@ -1,5 +1,6 @@
 package smokeTest;
 
+import org.testng.Assert;
 import pages.HotelMyCamp;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -21,8 +22,8 @@ public class PositiveLoginTest {
         hotelMyCamp.usernameBox.sendKeys(ConfigReader.getProperty("HotelMyCampValidUsername"));
         hotelMyCamp.passwordBox.sendKeys(ConfigReader.getProperty("HotelMyCampValidPassword"));
         hotelMyCamp.loginButonu.click();
-
-
+        Assert.assertTrue(hotelMyCamp.basariliGirisYaziElementi.isDisplayed());
+        Driver.closeDriver();
     }
 
 }

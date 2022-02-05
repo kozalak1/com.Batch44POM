@@ -1,5 +1,6 @@
 package tests.day_16;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelMyCamp;
 import utilities.Driver;
@@ -21,6 +22,7 @@ public class C04_HotelMyCampPositiveLogin {
         hotelMyCamp.usernameBox.sendKeys("manager");
         hotelMyCamp.passwordBox.sendKeys("Manager1!");
         hotelMyCamp.loginButonu.click();
-
+        //	Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
+        Assert.assertTrue(hotelMyCamp.basariliGirisYaziElementi.isDisplayed());
     }
 }

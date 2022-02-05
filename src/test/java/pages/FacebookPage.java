@@ -21,4 +21,7 @@ public class FacebookPage {
     @FindBy(name="login")
     public WebElement loginButonu;
 
+    @FindBy(className = "//div[text()='Bu senin hesabın mı?']")
+    public WebElement girilemediYazisiElemnti;
+
 }

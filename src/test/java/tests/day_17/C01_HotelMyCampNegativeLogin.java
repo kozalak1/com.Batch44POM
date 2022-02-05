@@ -6,8 +6,8 @@ import pages.HotelMyCamp;
 import utilities.Driver;
 
 public class C01_HotelMyCampNegativeLogin {
-            //1 ) Bir Class olustur : NegativeTest
-    //2) Bir test method olustur NegativeLoginTest()
+    //1 ) Bir Class olustur : NegativeTest
+    //2)  Bir test method olustur NegativeLoginTest()
     //         https://www.hotelmycamp.com/ adresine git
     //        login butonuna bas
     //    test data username: manager1 ,
@@ -25,7 +25,7 @@ public class C01_HotelMyCampNegativeLogin {
         hotelMyCamp.usernameBox.sendKeys(" manager1 ,");
         hotelMyCamp.passwordBox.sendKeys(" manager1!");
         hotelMyCamp.loginButonu.click();
-
+        //	Degerleri girildiginde sayfaya girilemedigini test et
         Assert.assertTrue(hotelMyCamp.girisYapilamadiYaziElementi.isDisplayed());
         Driver.closeDriver();
     }
