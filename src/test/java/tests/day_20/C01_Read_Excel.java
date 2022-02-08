@@ -25,7 +25,7 @@ public class C01_Read_Excel {
 
 
 
-                Workbook workbook = WorkbookFactory.create(fis); // exception verdi, atadık
+        Workbook workbook = WorkbookFactory.create(fis); // exception verdi, atadık
         Sheet sheet = workbook.getSheet("Sayfa1");
         Row row = sheet.getRow(4);
         Cell cell = row.getCell(2);
@@ -46,4 +46,4 @@ public class C01_Read_Excel {
 
 }
 
-}
+
