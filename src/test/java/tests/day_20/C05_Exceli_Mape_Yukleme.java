@@ -11,6 +11,7 @@ public class C05_Exceli_Mape_Yukleme {
     public void test01(){
         // dosya yolu ve sayfa ismi verilen bie excel sheet'i map olarak kaydeden
         // reusable bir method olusturalim
+        // burada excel'i oldugu gibi Map'in içine alarak istediğimiz işlemleri yapabiliriz
 
         String path="src/main/resources/ulkeler.xlsx";
         String sayfaAdi="Sayfa1";
