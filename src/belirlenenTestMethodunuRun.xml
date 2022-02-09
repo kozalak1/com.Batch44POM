@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="methods">
+    <test name="hotel">
+       <classes>
+           <class name="tests.day_18.C02_WebTables">
+               <methods>
+                   <exclude name="printRows"></exclude>
+             <!--C02_WebTables Class'ındaki loginT ve table metodu çalıştı; printRows metodu çalışmadı, hariç tuttuk -->
+               </methods>
+           </class>
+        <!-- bu seviyede include ya da exclude baska classlardan baska methodları da buraya ekleyebiliriz -->
+           <!--method secimi yapilirken
+                               include : secilirse geriye kalanlar exclude gibi olur
+                               exclude secilirse geriye kalanlar include olur-->
+       </classes>
+
+    </test>
+
+</suite>
+
+        <!--eger bir test icerisinde birden fazla hiyerarsi olusturmamiz gerekirse
+            uygun kirilma noktasi belirleyip oradan hiyerarsiyi yeniden olusturabiliriz-->
