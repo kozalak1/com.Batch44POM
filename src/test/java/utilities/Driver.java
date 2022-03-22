@@ -10,58 +10,54 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
 
 public class Driver {
-      private  Driver (){
 
-        }
-    public static WebDriver driver;
+    private  Driver(){
 
-    public static WebDriver getDriver() {
+    }
 
-        WebDriverManager.chromedriver().setup();
+    private static WebDriver driver;
 
-        if (driver == null) {
+    public static WebDriver getDriver(){
 
-            switch (ConfigReader.getProperty("browser")) {
+
+
+        if(driver==null){   // bu if sayesinde kod calisirken bir kere new keyword ile driver olusturulaca
+            // diger kullanimlarda new devreye girmeyecek
+            switch (ConfigReader.getProperty("browser")){
 
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver=new ChromeDriver();
                     break;
-
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver=new FirefoxDriver();
                     break;
-
-                case "safari":
-                    WebDriverManager.safaridriver().setup();
-                    driver=new SafariDriver();
-                    break;
-
                 case "opera":
                     WebDriverManager.operadriver().setup();
                     driver=new OperaDriver();
                     break;
-
+                case "safari":
+                    WebDriverManager.safaridriver().setup();
+                    driver=new SafariDriver();
+                    break;
                 default:
                     WebDriverManager.chromedriver().setup();
                     driver=new ChromeDriver();
-
             }
 
         }
-        // bu if sayesinde kod calisirken bir kere new keyword ile driver olusacak
-        // diger kullanimlarda new devreye girmeyecek
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         return driver;
-
     }
 
-    public static void closeDriver() {
-        if (driver != null) {
+    public static void closeDriver(){
+        if (driver!=null){
             driver.quit();
-            driver = null;
+            driver=null;
         }
+
     }
 }

@@ -8,8 +8,9 @@ import pages.P1_DemoGuruPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRaporlama;
 
-public class P1_DemoGuruTest {
+public class P1_DemoGuruTest extends TestBaseRaporlama {
         /*
         http://demo.guru99.com/test/drag_drop.html url e git
         DEBIT SIDE da Account bolumune BANK butonunu surukle ve birak
